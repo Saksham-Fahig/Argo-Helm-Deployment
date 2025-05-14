@@ -1,0 +1,23 @@
+replicaCount: 1
+nameOverride-deoloyment-name: count-deployment
+nameOverride: count-app
+nameOverride-container: count-container
+
+image:
+  repository: ghcr.io/cloudraftio/metrics-app
+  tag: 1.1
+
+service:
+  name: count-app-service
+  type: ClusterIP
+  protocol: TCP
+  port: 80
+  targetPort: 8080
+
+ingress:
+  name: my-app-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+  host: localhost
+  path: /
+  pathType: Prefix
