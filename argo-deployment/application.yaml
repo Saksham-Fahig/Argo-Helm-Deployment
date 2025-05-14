@@ -6,12 +6,12 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/your-org/my-gitops-repo.git
+    repoURL: https://github.com/Saksham-Fahig/Argo-Helm-Deployment.git
     targetRevision: main
     path: chart/my-app  # Path to the Helm chart in your repo
   destination:
     server: https://kubernetes.default.svc
-    namespace: my-app-namespace
+    namespace: counter-app
   syncPolicy:
     automated:
       prune: true
